@@ -2,7 +2,7 @@
 
 Accounts and login for Pumpkin servers in offline mode. New players register with `/register`, returning ones log in with `/login`. Until then they wait at their spawn on a dark screen, hidden from others, unable to move or be hurt.
 
-![Register, log in, sessions and two-factor login](assets/market/demo.gif)
+![Register, log in, sessions and two-factor login](assets/market/demo.webp)
 
 ## Features
 
@@ -43,10 +43,10 @@ Accounts and login for Pumpkin servers in offline mode. New players register wit
 
 ## Screenshots
 
-![Welcome screen with /register](assets/market/register.png)
-![Welcome back screen with /login](assets/market/login.png)
-![Account created](assets/market/account-created.png)
-![Two-factor login setup](assets/market/2fa.png)
+![Welcome screen with /register](assets/market/register.webp)
+![Welcome back screen with /login](assets/market/login.webp)
+![Account created](assets/market/account-created.webp)
+![Two-factor login setup](assets/market/2fa.webp)
 
 ## Installation
 
