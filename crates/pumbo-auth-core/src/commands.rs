@@ -135,7 +135,7 @@ pub fn run(auth: &mut Auth, sender: &Sender, args: &[String], platform: &str, no
     let tree = tree();
     let lang = auth.lang.clone();
     match tree.dispatch(args, sender.allowed) {
-        Dispatch::Help => Outcome::Reply(help(auth, sender, page_arg(args.get(1..).unwrap_or(&[]))), Vec::new()),
+        Dispatch::Help => Outcome::Reply(help(auth, sender, page_arg(args)), Vec::new()),
         Dispatch::Unknown { name } => {
             Outcome::Reply(style::unknown_subcommand(&lang, &name, &tree.help_line()), Vec::new())
         }
