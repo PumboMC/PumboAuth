@@ -100,20 +100,20 @@ The login rules live in one shared core. You pick the build that fits your setup
 
 | Build | File | Where it goes | What is different |
 | --- | --- | --- | --- |
-| 🌐 **PumboProx** (whole network) | `pumbo-auth.wasm` | `plugins/` of the proxy | One account database for every server. The player logs in in the proxy's virtual world, before any server sees them, so `/server` cannot skip the login. |
-| 🎃 **Pumpkin** (one server) | `PumboAuth-26.3.wasm` or `PumboAuth-26.2.wasm` | `plugins/` of the server | The player waits at their own place: dark screen, hidden from others, cannot move or be hurt. Each server has its own accounts. |
+| 🌐 **PumboProx** (whole network) | `PumboAuth-Proxy-<version>.wasm` | `plugins/` of the proxy | One account database for every server. The player logs in in the proxy's virtual world, before any server sees them, so `/server` cannot skip the login. |
+| 🎃 **Pumpkin** (one server) | `PumboAuth-Pumpkin-26.3-<version>.wasm` or `PumboAuth-Pumpkin-26.2-<version>.wasm` | `plugins/` of the server | The player waits at their own place: dark screen, hidden from others, cannot move or be hurt. Each server has its own accounts. |
 
 > [!IMPORTANT]
 > Premium auto-login needs PumboProx, or another proxy that checks Mojang accounts and forwards them (Velocity modern forwarding). On a plain Pumpkin server in offline mode the server cannot tell premium players apart, so every player registers and logs in with a password.
 
 ## Installation
 
-> [!IMPORTANT]
-> Ready-made files come with release 0.1. Until then, [build from source](#building).
+> [!TIP]
+> Download the files from [Releases](https://github.com/PumboMC/PumboAuth/releases/latest), or [build from source](#building).
 
 **On PumboProx**
 
-1. Put `pumbo-auth.wasm` into the proxy's `plugins/` folder.
+1. Put `PumboAuth-Proxy-<version>.wasm` into the proxy's `plugins/` folder.
 2. Start the proxy. The first start creates `plugins/pumbo-auth/config.yml` with comments.
 3. Recommended in `pumboprox.yml`, so nobody gets in without a login:
 
