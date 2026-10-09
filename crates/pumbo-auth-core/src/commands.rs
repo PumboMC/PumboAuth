@@ -2,7 +2,7 @@
 //! `pumbo.auth.<action>`).
 
 use pumbo_common::command::{Commands, Dispatch, Sub};
-use pumbo_common::help::{Help, page_arg};
+use pumbo_common::help::Help;
 use pumbo_common::rich::{Line, Text};
 use pumbo_common::style;
 use pumbo_common::text::Args;
@@ -135,7 +135,7 @@ pub fn run(auth: &mut Auth, sender: &Sender, args: &[String], platform: &str, no
     let tree = tree();
     let lang = auth.lang.clone();
     match tree.dispatch(args, sender.allowed) {
-        Dispatch::Help => Outcome::Reply(help(auth, sender, page_arg(args)), Vec::new()),
+        Dispatch::Help { page } => Outcome::Reply(help(auth, sender, page), Vec::new()),
         Dispatch::Unknown { name } => {
             Outcome::Reply(style::unknown_subcommand(&lang, &name, &tree.help_line()), Vec::new())
         }
