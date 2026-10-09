@@ -64,3 +64,5 @@ PumboAuth also runs on [PumboProx](https://github.com/PumboMC/PumboProx): one ac
 
 PumboAuth is in beta. Try it on a test server before you put players on it.
 Source, documentation and issues: https://github.com/PumboMC/PumboAuth (GPL-3.0)
+
+[![PumboProx: everything you need to run a network on Pumpkin](assets/pumboprox.webp)](https://github.com/PumboMC/PumboProx)
