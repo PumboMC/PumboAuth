@@ -1,0 +1,22 @@
+[package]
+name = "pumbo-auth-core"
+description = "PumboAuth core: accounts, password hashing, two-factor login, sessions and premium detection without platform code"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+publish.workspace = true
+
+[dependencies]
+argon2.workspace = true
+bcrypt.workspace = true
+hmac.workspace = true
+pumbo-common.workspace = true
+qrcodegen.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+sha1.workspace = true
+sha2.workspace = true
+
+[lints]
+workspace = true

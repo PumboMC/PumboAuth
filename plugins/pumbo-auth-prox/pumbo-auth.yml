@@ -1,0 +1,54 @@
+# Manifest of PumboAuth for PumboProx (copy next to pumbo-auth.wasm in plugins/).
+id: pumbo-auth
+version: 0.1.0-beta.1
+api: "0.1"
+events: [pre-login, gate, virtual-input, disconnect, timer, command]
+short-name: auth
+short-alias: pa             # /pa = /pumboauth
+# After PumboFilter (priority 100), in the same connection.
+gate: { name: auth, priority: 200, on-failure: deny }
+on-failure: { pre-login: deny }
+# Never written to a log and never sent to a server, even while PumboAuth is
+# not running (the proxy then answers that the login is unavailable).
+sensitive-commands: [login, l, log, register, reg, changepassword, changepass, cp, unregister, unreg, logout, destroysession, 2fa, totp, premium, license]
+
+publishes: ["pumbo:player-authenticated@1.0", "pumbo:player-registered@1.0"]
+# A ban ends the player's sessions (they log in with the password again).
+subscribes: ["pumbo:player-punished@1.0"]
+
+placeholders:
+  namespace: pumboauth
+  keys:
+    - { name: logged_in, scope: player, mode: push, public: true, fallback: "false" }
+    - { name: premium, scope: player, mode: push, public: true, fallback: "false" }
+    - { name: registered, scope: player, mode: push, public: true, fallback: "false" }
+
+permissions:
+  - node: pumbo.auth.stats
+    description: Login statistics (/pumboauth stats)
+  - node: pumbo.auth.forceregister
+    description: Register an account for a player
+  - node: pumbo.auth.forcechangepassword
+    description: Set a player's password
+  - node: pumbo.auth.unregister
+    description: Remove a player's account
+  - node: pumbo.auth.forcelogin
+    description: Log in a player waiting at the prompt
+  - node: pumbo.auth.forcepremium
+    description: Make an account a premium one
+  - node: pumbo.auth.forceoffline
+    description: Make a premium account a password one
+  - node: pumbo.auth.reset2fa
+    description: Turn off two-factor login of a player
+  - node: pumbo.auth.unblock
+    description: Clear wrong-password counters of an address or account
+  - node: pumbo.auth.logout
+    description: End the sessions of a player
+  - node: pumbo.auth.import
+    description: Import AuthMe accounts
+  - node: pumbo.auth.reload
+    description: /pumbo auth reload
+  - node: pumbo.auth.version
+    description: /pumbo auth version
+  - node: pumbo.auth.debug
+    description: /pumbo auth debug

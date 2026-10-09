@@ -1,0 +1,78 @@
+# ══════════════════════════════════════════════════════════════
+#  PumboAuth · config.yml
+#  Apply changes:  /pumboauth reload  (commands: after a restart)
+#  Times:          the unit is in the name (-seconds, -minutes, -hours, -ms)
+#  Full reference: README.md → Configuration
+# ══════════════════════════════════════════════════════════════
+
+language: en                 # en | pl  (files in lang/)
+
+
+# ── Login and registration ────────────────────────────────────
+auth:
+  enabled: true
+  timeout-seconds: 60            # time to log in or register
+  bossbar: true                  # countdown bar while waiting
+  login-attempts: 3              # wrong passwords before the kick
+  min-password-length: 4
+  max-password-length: 71
+  check-password-strength: true  # refuse common passwords and the nickname
+  register-repeat-password: true # /register <password> <password>
+  disable-registrations: false   # new players cannot create accounts
+  ip-registrations-max: 3        # accounts per address (0 = no limit)
+  ip-registrations-hours: 6      # ...within this time
+  ip-bruteforce-max: 10          # wrong passwords that block an address (0 = off)
+  ip-bruteforce-hours: 8
+  account-bruteforce-max: 20     # wrong passwords that lock an account (0 = off)
+  account-bruteforce-hours: 8
+  command-cooldown-ms: 750       # least time between two password commands
+  confirm-keyword: confirm       # word that confirms /premium
+
+
+# ── Sessions ──────────────────────────────────────────────────
+sessions:
+  enabled: true              # same address and UUID: no password again
+  ttl-minutes: 60
+
+
+# ── Premium players ───────────────────────────────────────────
+premium:
+  enabled: true
+  forwarded-profiles: true   # Mojang-authenticated players log in by themselves, see README
+  save-accounts: true        # store an account at the first join (protects the nickname)
+
+
+# ── Nicknames ─────────────────────────────────────────────────
+nickname:
+  enabled: true
+  min-length: 3
+  max-length: 16
+  allowed-chars: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_
+  blocked: []                # refused nicknames, * matches anything: ["admin*"]
+  case-protection: true      # the nickname must be typed in the same letter case
+  premium-protection: true   # a premium nickname cannot join as an offline player
+
+
+# ── Two-factor login ──────────────────────────────────────────
+two-factor:
+  enabled: true
+  issuer: Minecraft          # shown in the authenticator app
+  recovery-codes: 8
+
+
+# ── Commands (after a restart) ────────────────────────────────
+commands:
+  admin-aliases: [pa, auth]  # other names of /pumboauth; drop a name another plugin uses
+
+
+# ── Import ────────────────────────────────────────────────────
+import:
+  enabled: true              # /pumboauth import authme <file>
+
+
+# ── Password hashing ──────────────────────────────────────────
+hashing:
+  argon2-memory-kib: 19456   # argon2id cost for new passwords
+  argon2-iterations: 2
+  argon2-parallelism: 1
+  rehash-legacy: true        # imported hashes become argon2id at the next login

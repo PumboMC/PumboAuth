@@ -1,0 +1,125 @@
+# PumboAuth messages (English).
+# Replies get the plugin prefix and the colour of their tone from the plugin, so
+# they are written without either; &f...&r highlights a value. Kicks, titles and
+# the countdown bar are shown as written (& colour codes). {0}, {1}, ... are
+# arguments, {nl} starts a new line. An empty value disables a message.
+
+kick-db-error: "&cThe login database is not available.{nl}&7Please try again later."
+kick-nickname-invalid: "&cThis nickname is not allowed.{nl}&7Use {0} to {1} letters, digits or _."
+kick-nickname-blocked: "&cThis nickname is not allowed."
+kick-nickname-case: "&cThis account is registered as &f{0}&c.{nl}&7Change your nickname from &f{1}&7 to &f{0}&7."
+kick-ip-blocked: "&cToo many wrong passwords from your address.{nl}&7Try again later."
+kick-account-locked: "&cToo many wrong passwords for this account.{nl}&7Try again later."
+kick-premium-offline: "&cThis nickname belongs to a premium account.{nl}&7Join with the official launcher."
+kick-registrations-disabled: "&cNew accounts cannot be created right now."
+kick-ip-registrations: "&cToo many accounts were created from your address.{nl}&7Try again later."
+kick-auth-timeout: "&cYou did not log in in time.{nl}&7Please join again."
+kick-too-many-attempts: "&cToo many wrong passwords.{nl}&7Please join again."
+kick-unregistered: "&eYour account was removed."
+kick-account-conflict: "&cThis nickname is taken by another account.{nl}&7Contact the server staff."
+kick-already-online: "&cYou are already on the server."
+kick-join-again: "&eYou were still connected.{nl}&7Join again in a moment."
+kick-other-connection: "&eYou connected again from another place."
+reload-join-again: PumboAuth is being reloaded. Please join the server again.
+
+auth-register-prompt: "Create an account: {0}"
+auth-login-prompt: "Log in: {0}"
+auth-register-title: "&6Welcome"
+auth-register-subtitle: "&7/register <password> <password>"
+auth-login-title: "&6Welcome back"
+auth-login-subtitle: "&7/login <password>"
+auth-bossbar: "&eTime left to log in: &f{0}"
+auth-login-success: Logged in.
+auth-register-success: Account created. You are logged in.
+auth-session-login: Logged in by your session.
+auth-premium-login: Logged in with your premium account.
+auth-premium-hint: This nickname has an account with a password. After you log in, {0} switches it to premium login.
+auth-wrong-password: "Wrong password. Attempts left: {0}."
+auth-wrong-password-free: Wrong password.
+auth-not-registered: "You have no account yet. Create one: {0}"
+auth-already-registered: "You already have an account. Log in: {0}"
+auth-already-logged-in: You are already logged in.
+auth-passwords-differ: "The two passwords are different. Type the same password twice: {0}"
+auth-password-too-short: "The password is too short: at least {0} characters."
+auth-password-too-long: "The password is too long: at most {0} characters."
+auth-password-unsafe: This password is too common. Pick another one.
+auth-password-name: The password cannot be your nickname.
+auth-cooldown: Wait a moment before you try again.
+auth-blocked: "Log in first: {0}"
+auth-blocked-register: "Create an account first: {0}"
+auth-premium-no-password: This account logs in with premium and has no password.
+auth-totp-prompt: "Password accepted. Now enter the code from your authenticator app: {0}"
+auth-totp-title: "&6Two-factor login"
+auth-totp-subtitle: "&7/2fa <code>"
+auth-totp-wrong: "Wrong code. Attempts left: {0}."
+auth-totp-wrong-free: Wrong code.
+auth-totp-needed: "Two-factor login is on: add the code: {0}"
+auth-error: Something went wrong, please try again.
+
+changepassword-success: Password changed.
+logout-success: "Your session was removed: next time you log in with your password."
+
+totp-off: Two-factor login is turned off on this server.
+totp-already-enabled: Two-factor login is already on.
+totp-not-enabled: Two-factor login is not on.
+totp-setup: "Add this key to your authenticator app: {0}"
+totp-setup-copy: "[click to copy the setup link]"
+totp-confirm-prompt: Then confirm with {0}
+totp-not-pending: Start with {0}
+totp-enabled: "Two-factor login is on. Recovery codes, each works once:"
+totp-recovery-codes: "{0}"
+totp-disabled: Two-factor login is off.
+totp-wrong-code: Wrong code.
+
+premium-not-verified: Join with your premium (official) account first, then run /premium again.
+premium-already: This account already logs in with premium.
+premium-warning: After this you can only join with this premium account, and the password is removed. Type {0} within 30 seconds.
+premium-enabled: Premium login is on. Next time you are logged in automatically.
+premium-not-pending: Start with {0}
+
+help-section: Admin
+help-reload: Reload the config and messages
+help-stats: Logins, accounts and players
+help-forceregister: Create an account
+help-forceregister-details: "The player then logs in with this password.{nl}Example: /pumboauth forceregister Steve secret123"
+help-forcechangepassword: Set a password
+help-forcechangepassword-details: Also turns a premium account back into a normal one.
+help-unregister: Remove an account
+help-unregister-details: A player who is online is disconnected.
+help-forcelogin: Log in a waiting player
+help-forcelogin-details: For a player who is at the login prompt right now.
+help-forcepremium: Make an account premium
+help-forcepremium-details: The next premium join with this nickname claims the account; the password is removed.
+help-forceoffline: Make an account normal
+help-forceoffline-details: The account logs in with a password again; set one with forcechangepassword.
+help-reset2fa: Turn off two-factor login
+help-reset2fa-details: For a player who lost their authenticator.
+help-unblock: Clear failed logins
+help-unblock-details: Of an address or a nickname.
+help-logout: Remove the sessions of an account
+help-logout-details: The player logs in with the password next time.
+help-import: Import accounts from AuthMe
+help-import-details: "A CSV file (nickname,hash) in the plugin data folder.{nl}Example: /pumboauth import authme authme.csv"
+
+admin-registered: "{0} has an account now."
+admin-exists: "{0} already has an account."
+admin-no-account: "{0} has no account."
+admin-password-set: "{0} has a new password."
+admin-unregistered: The account of {0} is removed.
+admin-forcelogin: "{0} is logged in."
+admin-not-waiting: "{0} is not at the login prompt."
+admin-premium-set: "{0} logs in with premium from now on."
+admin-offline-set: "{0} logs in with a password from now on. Set one: {1}"
+admin-2fa-reset: Two-factor login of {0} is off.
+admin-unblocked: Failed logins of {0} are cleared.
+admin-logged-out: The sessions of {0} are removed.
+admin-imported: Imported {0} accounts, skipped {1} existing, {2} lines were invalid.
+admin-import-disabled: Import is turned off in the config.
+admin-file-name: "Invalid file name {0}: use a file in the plugin data folder."
+admin-file-error: "Cannot read {0}: {1}"
+stats-online: "Logging in now: {0} of {1} players. Accounts: {2}"
+stats-logins: "Logins: {0}, new accounts: {1}, by session: {2}, premium: {3}, wrong passwords: {4}"
+stats-database: "Database: {0}"
+stats-ok: ok
+database-error: "The database is not available: {0}"
+reloaded-warnings: Reloaded with {0} warnings, see the server log.

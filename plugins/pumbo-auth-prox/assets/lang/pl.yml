@@ -1,0 +1,165 @@
+# --- common ---
+# Komunikaty wspólne dla wszystkich wtyczek Pumbo (polski).
+# Komunikaty zwrotne dostają od wtyczki prefiks i kolor swojego tonu (zielony
+# sukces, czerwony błąd, żółte ostrzeżenie, szara informacja), więc pisze się je
+# bez nich. Kody & nadal działają: &f...&r wyróżnia wartość, &r wraca do koloru
+# tonu. {0}, {1}, ... to argumenty, {nl} zaczyna nową linię. Pusta wartość
+# wyłącza komunikat. Formy rozdzielone | zależą od liczby:
+# "{0} dzień|{0} dni|{0} dni" (1, 2-4, 5+).
+command-no-permission: Nie masz do tego uprawnień.
+command-unknown: Nieznana podkomenda {0}. Użyj {1}.
+command-unknown-hover: Kliknij, żeby zobaczyć komendy
+command-usage: "Użycie: {0}"
+command-usage-hover: Kliknij, żeby wpisać komendę
+command-players-only: Tej komendy mogą używać tylko gracze.
+command-player-not-found: Nie znaleziono gracza {0}.
+command-invalid-duration: "Nieprawidłowy czas {0}. Przykłady: &f30m&r, &f1d12h&r, &fperm"
+command-reloaded: Konfiguracja przeładowana.
+command-reload-failed: "Nic nie przeładowano, plik ma błąd: {0}"
+command-error: Coś poszło nie tak, szczegóły w logu serwera.
+command-help-empty: Nie ma komend, których możesz użyć.
+command-help-hint: Najedź na komendę po opis, kliknij, by ją wpisać.
+command-help-previous: Poprzednia strona
+command-help-next: Następna strona
+command-help-permission: "Uprawnienie: {0}"
+command-help-click: Kliknij, żeby wpisać na czacie
+version-description: Wersja i platforma
+version-platform: Platforma
+time-permanent: na zawsze
+time-day: "{0} dzień|{0} dni|{0} dni"
+time-hour: "{0} godzina|{0} godziny|{0} godzin"
+time-minute: "{0} minuta|{0} minuty|{0} minut"
+time-second: "{0} sekunda|{0} sekundy|{0} sekund"
+number-separator: " "
+
+# --- auth ---
+# Komunikaty PumboAuth (polski).
+# Odpowiedzi dostają prefiks i kolor tonu od wtyczki, więc są pisane bez nich;
+# &f...&r wyróżnia wartość. Kicki, tytuły i pasek odliczania są pokazywane tak,
+# jak są napisane (kody kolorów &). {0}, {1}, ... to argumenty, {nl} zaczyna
+# nową linię. Pusta wartość wyłącza komunikat.
+
+kick-db-error: "&cBaza logowania nie działa.{nl}&7Spróbuj później."
+kick-nickname-invalid: "&cTen nick jest niedozwolony.{nl}&7Użyj od {0} do {1} liter, cyfr albo _."
+kick-nickname-blocked: "&cTen nick jest niedozwolony."
+kick-nickname-case: "&cTo konto jest zapisane jako &f{0}&c.{nl}&7Zmień nick z &f{1}&7 na &f{0}&7."
+kick-ip-blocked: "&cZa dużo złych haseł z twojego adresu.{nl}&7Spróbuj później."
+kick-account-locked: "&cZa dużo złych haseł do tego konta.{nl}&7Spróbuj później."
+kick-premium-offline: "&cTen nick należy do konta premium.{nl}&7Wejdź oficjalnym launcherem."
+kick-registrations-disabled: "&cTeraz nie można zakładać nowych kont."
+kick-ip-registrations: "&cZ twojego adresu założono za dużo kont.{nl}&7Spróbuj później."
+kick-auth-timeout: "&cNie zalogowałeś się na czas.{nl}&7Wejdź ponownie."
+kick-too-many-attempts: "&cZa dużo złych haseł.{nl}&7Wejdź ponownie."
+kick-unregistered: "&eTwoje konto zostało usunięte."
+kick-account-conflict: "&cTen nick zajmuje inne konto.{nl}&7Napisz do obsługi serwera."
+kick-already-online: "&cJesteś już na serwerze."
+kick-join-again: "&eByłeś jeszcze połączony.{nl}&7Wejdź za chwilę."
+kick-other-connection: "&ePołączono ponownie z innego miejsca."
+reload-join-again: PumboAuth jest przeładowywany. Wejdź na serwer ponownie.
+
+auth-register-prompt: "Załóż konto: {0}"
+auth-login-prompt: "Zaloguj się: {0}"
+auth-register-title: "&6Witaj"
+auth-register-subtitle: "&7/register <hasło> <hasło>"
+auth-login-title: "&6Witaj ponownie"
+auth-login-subtitle: "&7/login <hasło>"
+auth-bossbar: "&eCzas na zalogowanie: &f{0}"
+auth-login-success: Zalogowano.
+auth-register-success: Konto założone. Jesteś zalogowany.
+auth-session-login: Zalogowano sesją.
+auth-premium-login: Zalogowano kontem premium.
+auth-premium-hint: Ten nick ma konto z hasłem. Po zalogowaniu {0} przełączy je na logowanie premium.
+auth-wrong-password: "Złe hasło. Zostało prób: {0}."
+auth-wrong-password-free: Złe hasło.
+auth-not-registered: "Nie masz jeszcze konta. Załóż je: {0}"
+auth-already-registered: "Masz już konto. Zaloguj się: {0}"
+auth-already-logged-in: Jesteś już zalogowany.
+auth-passwords-differ: "Hasła się różnią. Wpisz dwa razy to samo hasło: {0}"
+auth-password-too-short: "Hasło jest za krótkie: co najmniej {0} znaki."
+auth-password-too-long: "Hasło jest za długie: najwyżej {0} znaków."
+auth-password-unsafe: To hasło jest zbyt popularne. Wybierz inne.
+auth-password-name: Hasło nie może być twoim nickiem.
+auth-cooldown: Poczekaj chwilę, zanim spróbujesz znowu.
+auth-blocked: "Najpierw się zaloguj: {0}"
+auth-blocked-register: "Najpierw załóż konto: {0}"
+auth-premium-no-password: To konto loguje się przez premium i nie ma hasła.
+auth-totp-prompt: "Hasło przyjęte. Teraz wpisz kod z aplikacji: {0}"
+auth-totp-title: "&6Logowanie dwuetapowe"
+auth-totp-subtitle: "&7/2fa <kod>"
+auth-totp-wrong: "Zły kod. Zostało prób: {0}."
+auth-totp-wrong-free: Zły kod.
+auth-totp-needed: "Masz włączone logowanie dwuetapowe: dopisz kod: {0}"
+auth-error: Coś poszło nie tak, spróbuj jeszcze raz.
+
+changepassword-success: Hasło zmienione.
+logout-success: "Sesja usunięta: następnym razem zalogujesz się hasłem."
+
+totp-off: Logowanie dwuetapowe jest na tym serwerze wyłączone.
+totp-already-enabled: Logowanie dwuetapowe jest już włączone.
+totp-not-enabled: Logowanie dwuetapowe nie jest włączone.
+totp-setup: "Dodaj ten klucz w aplikacji uwierzytelniającej: {0}"
+totp-setup-copy: "[kliknij, żeby skopiować link]"
+totp-confirm-prompt: "Potem potwierdź: {0}"
+totp-not-pending: Zacznij od {0}
+totp-enabled: "Logowanie dwuetapowe włączone. Kody zapasowe, każdy działa raz:"
+totp-recovery-codes: "{0}"
+totp-disabled: Logowanie dwuetapowe wyłączone.
+totp-wrong-code: Zły kod.
+
+premium-not-verified: Najpierw wejdź kontem premium (oficjalnym launcherem), potem znowu użyj /premium.
+premium-already: To konto już loguje się przez premium.
+premium-warning: Potem wejdziesz tylko tym kontem premium, a hasło zostanie usunięte. Wpisz {0} w ciągu 30 sekund.
+premium-enabled: Logowanie premium włączone. Następnym razem zalogujesz się automatycznie.
+premium-not-pending: Zacznij od {0}
+
+help-section: Admin
+help-reload: Przeładowuje config i komunikaty
+help-stats: Logowania, konta i gracze
+help-forceregister: Zakłada konto
+help-forceregister-details: "Gracz loguje się potem tym hasłem.{nl}Przykład: /pumboauth forceregister Steve tajne123"
+help-forcechangepassword: Ustawia hasło
+help-forcechangepassword-details: Zmienia też konto premium z powrotem na zwykłe.
+help-unregister: Usuwa konto
+help-unregister-details: Gracz online zostaje rozłączony.
+help-forcelogin: Loguje czekającego gracza
+help-forcelogin-details: Dla gracza, który teraz jest przy logowaniu.
+help-forcepremium: Robi konto premium
+help-forcepremium-details: Następne wejście premium z tym nickiem przejmuje konto; hasło jest usuwane.
+help-forceoffline: Robi konto zwykłym
+help-forceoffline-details: Konto znowu loguje się hasłem; ustaw je przez forcechangepassword.
+help-reset2fa: Wyłącza logowanie dwuetapowe
+help-reset2fa-details: Dla gracza, który zgubił aplikację.
+help-unblock: Czyści nieudane logowania
+help-unblock-details: Adresu albo nicku.
+help-logout: Usuwa sesje konta
+help-logout-details: Gracz zaloguje się następnym razem hasłem.
+help-import: Importuje konta z AuthMe
+help-import-details: "Plik CSV (nick,hash) w folderze danych wtyczki.{nl}Przykład: /pumboauth import authme authme.csv"
+
+admin-registered: "{0} ma teraz konto."
+admin-exists: "{0} ma już konto."
+admin-no-account: "{0} nie ma konta."
+admin-password-set: "{0} ma nowe hasło."
+admin-unregistered: Konto {0} usunięte.
+admin-forcelogin: "{0} jest zalogowany."
+admin-not-waiting: "{0} nie jest teraz przy logowaniu."
+admin-premium-set: "{0} loguje się od teraz przez premium."
+admin-offline-set: "{0} loguje się od teraz hasłem. Ustaw je: {1}"
+admin-2fa-reset: Logowanie dwuetapowe {0} wyłączone.
+admin-unblocked: Nieudane logowania {0} wyczyszczone.
+admin-logged-out: Sesje {0} usunięte.
+admin-imported: "Zaimportowano kont: {0}, pominięto istniejących: {1}, złych linii: {2}."
+admin-import-disabled: Import jest wyłączony w configu.
+admin-file-name: "Zła nazwa pliku {0}: użyj pliku z folderu danych wtyczki."
+admin-file-error: "Nie da się odczytać {0}: {1}"
+stats-online: "Logują się teraz: {0} z {1} graczy. Kont: {2}"
+stats-logins: "Logowania: {0}, nowe konta: {1}, sesją: {2}, premium: {3}, złe hasła: {4}"
+stats-database: "Baza: {0}"
+stats-ok: działa
+database-error: "Baza nie działa: {0}"
+reloaded-warnings: "Przeładowano, ostrzeżeń: {0}; szczegóły w logu serwera."
+
+# --- auth-prox ---
+# PumboAuth na PumboProx (polski).
+prefix: "&#f28c28PumboAuth &8» "
+
