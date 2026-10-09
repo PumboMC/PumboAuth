@@ -184,7 +184,7 @@ Admin commands, `/pumboauth <command>` or the short `/pa <command>`, permission 
 | `import authme <file>` | Import accounts from an AuthMe CSV export |
 | `reload` / `version` | Reload the config, show the version |
 
-On PumboProx the admin commands also work as `/pumbo auth <command>` (`/pumbo auth` alone shows the help) and from the proxy console. On Pumpkin `/pa` and `/auth` are aliases of `/pumboauth` (`commands.admin-aliases` in `config.yml`), the permissions are named `pumboauth:<command>` and default to operators.
+On PumboProx the admin commands also work from the proxy console. On Pumpkin `/pa` and `/auth` are aliases of `/pumboauth` (`commands.admin-aliases` in `config.yml`), the permissions are named `pumboauth:<command>` and default to operators.
 
 ## Works with other Pumbo plugins
 
