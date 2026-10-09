@@ -1,6 +1,6 @@
 # Manifest of PumboAuth for PumboProx (copy next to pumbo-auth.wasm in plugins/).
 id: pumbo-auth
-version: 0.1.1-beta
+version: 0.1.2-beta
 api: "0.1"
 events: [pre-login, gate, virtual-input, disconnect, timer, command]
 short-name: auth
