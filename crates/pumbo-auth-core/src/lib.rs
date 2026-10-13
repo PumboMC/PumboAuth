@@ -46,4 +46,18 @@ mod tests {
         assert!(w.is_empty(), "{w:?}");
         assert_eq!(pl.get("auth-login-success"), "Zalogowano.");
     }
+
+    #[test]
+    fn pumbo_nodes_cover_plugin_nodes() {
+        let t = commands::tree();
+        let mut nodes: Vec<String> = t.subs().iter().map(|s| t.permission(s)).collect();
+        nodes.extend(["command", "player"].map(|a| pumbo_common::command::permission(ID, a)));
+        let hosts: Vec<String> = nodes.iter().map(|n| n.replacen("pumbo.auth.", "pumboauth:", 1)).collect();
+        for host in &hosts {
+            assert!(pumbo_common::pumpkin::PUMBO_NODES.contains(&host.as_str()), "{host} missing from PUMBO_NODES");
+        }
+        for n in pumbo_common::pumpkin::PUMBO_NODES.iter().filter(|n| n.starts_with("pumboauth:")) {
+            assert!(hosts.iter().any(|h| h == n), "{n} in PUMBO_NODES is no node of the plugin");
+        }
+    }
 }
