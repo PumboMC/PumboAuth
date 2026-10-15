@@ -119,6 +119,10 @@ mod tests {
         assert!(w.is_empty(), "{w:?}");
         assert_eq!(c, Config::default());
         assert_eq!(c.admin_names(), vec!["pumboauth", "pa", "auth"]);
+        let players = pumbo_auth_core::flow::PLAYER_COMMANDS.iter().flat_map(|(n, a)| std::iter::once(n).chain(*a));
+        for name in c.admin_names().iter().map(String::as_str).chain(players.copied()) {
+            assert_eq!(pumbo_common::pumpkin::pumbo_command_owner(name), Some("PumboAuth"), "{name}");
+        }
     }
 
     #[test]
