@@ -304,7 +304,7 @@ impl Auth {
     }
 
     fn usage(&self, uuid: &str, line: &str) -> Effect {
-        self.say(uuid, style::usage(&self.lang, line))
+        self.say(uuid, style::usage(&self.lang, style::accent::AUTH, line))
     }
 
     fn register_line(&self) -> &'static str {
