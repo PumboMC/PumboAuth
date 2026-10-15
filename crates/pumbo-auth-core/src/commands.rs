@@ -112,7 +112,7 @@ pub fn reloaded(auth: &Auth, warnings: usize) -> Text {
 }
 
 fn help(auth: &Auth, sender: &Sender, page: usize) -> Text {
-    let help = Help::from_commands("PumboAuth", &tree(), &auth.lang)
+    let help = Help::from_commands("PumboAuth", style::accent::AUTH, &tree(), &auth.lang)
         .version(env!("CARGO_PKG_VERSION"))
         .section(auth.lang.get("help-section"));
     if sender.console { help.console(&auth.lang, sender.allowed) } else { help.chat(&auth.lang, page, sender.allowed) }
@@ -137,10 +137,10 @@ pub fn run(auth: &mut Auth, sender: &Sender, args: &[String], platform: &str, no
     match tree.dispatch(args, sender.allowed) {
         Dispatch::Help { page } => Outcome::Reply(help(auth, sender, page), Vec::new()),
         Dispatch::Unknown { name } => {
-            Outcome::Reply(style::unknown_subcommand(&lang, &name, &tree.help_line()), Vec::new())
+            Outcome::Reply(style::unknown_subcommand(&lang, style::accent::AUTH, &name, &tree.help_line()), Vec::new())
         }
         Dispatch::NoPermission { .. } => fail(auth, "command-no-permission", &Args::new()),
-        Dispatch::Usage { usage } => Outcome::Reply(style::usage(&lang, &usage), Vec::new()),
+        Dispatch::Usage { usage } => Outcome::Reply(style::usage(&lang, style::accent::AUTH, &usage), Vec::new()),
         Dispatch::Run { sub, args } => {
             let nick = args.first().cloned().unwrap_or_default();
             let v = style::value(&nick);
@@ -149,6 +149,7 @@ pub fn run(auth: &mut Auth, sender: &Sender, args: &[String], platform: &str, no
                 Action::Version => Outcome::Reply(
                     style::version(
                         "PumboAuth",
+                        style::accent::AUTH,
                         env!("CARGO_PKG_VERSION"),
                         [(lang.get("version-platform"), platform.to_string())],
                     ),
@@ -160,7 +161,7 @@ pub fn run(auth: &mut Auth, sender: &Sender, args: &[String], platform: &str, no
                         return fail(auth, "admin-import-disabled", &Args::new());
                     }
                     if !nick.eq_ignore_ascii_case("authme") {
-                        return Outcome::Reply(style::usage(&lang, &tree.usage(sub)), Vec::new());
+                        return Outcome::Reply(style::usage(&lang, style::accent::AUTH, &tree.usage(sub)), Vec::new());
                     }
                     let file = args.get(1).cloned().unwrap_or_default();
                     if file.is_empty() || file.contains("..") || file.starts_with('/') {
