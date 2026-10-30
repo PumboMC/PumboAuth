@@ -105,7 +105,7 @@ pub fn admin(server: &Server, player: Option<&Player>, args: &[String]) -> Text 
     let allowed = |n: &str| nodes.iter().any(|(node, ok)| node == n && *ok);
     let sender = Sender { console: player.is_none(), allowed: &allowed };
     let now = now_ms();
-    let out = state::with(|rt| match commands::run(&mut rt.auth, &sender, args, api::PLATFORM, now) {
+    let out = state::with(|rt| match commands::run(&mut rt.auth, &sender, args, &crate::platform(), now) {
         Outcome::Reply(t, fx) => (t, fx),
         Outcome::Reload => (super::reload(rt), Vec::new()),
         Outcome::Import(file) => {

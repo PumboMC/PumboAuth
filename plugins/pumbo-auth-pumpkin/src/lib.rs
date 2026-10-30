@@ -30,10 +30,21 @@ pub fn pumpkin_node(node: &str) -> String {
     format!("{PLUGIN_NAME}:{action}")
 }
 
+/// The server this file is for, as `version` and the load line show it. A 26.3
+/// build is for Pumpkin 0.2.1; build.sh sets `PUMBO_PUMPKIN=0.2.0` for the
+/// 0.2.0 file.
+pub fn platform() -> String {
+    if cfg!(feature = "mc262") {
+        "Pumpkin 0.1.0-dev (MC 26.2)".into()
+    } else {
+        format!("Pumpkin {} (MC 26.3)", option_env!("PUMBO_PUMPKIN").unwrap_or("0.2.1"))
+    }
+}
+
 #[cfg(all(target_arch = "wasm32", feature = "mc263", feature = "mc262"))]
 compile_error!("enable only one of the features `mc263` and `mc262`");
 #[cfg(all(target_arch = "wasm32", not(any(feature = "mc263", feature = "mc262"))))]
-compile_error!("enable one of the features `mc263` (Pumpkin 0.2.0) or `mc262` (Pumpkin 0.1.0-dev)");
+compile_error!("enable one of the features `mc263` (Pumpkin 0.2.1 or 0.2.0) or `mc262` (Pumpkin 0.1.0-dev)");
 
 #[cfg(all(target_arch = "wasm32", feature = "mc262", not(feature = "mc263")))]
 extern crate api262 as papi;
@@ -71,5 +82,12 @@ mod tests {
     #[test]
     fn nodes() {
         assert_eq!(pumpkin_node("pumbo.auth.forceregister"), "pumboauth:forceregister");
+    }
+
+    #[test]
+    fn platform_defaults_to_pumpkin_0_2_1() {
+        if option_env!("PUMBO_PUMPKIN").is_none() && !cfg!(feature = "mc262") {
+            assert_eq!(platform(), "Pumpkin 0.2.1 (MC 26.3)");
+        }
     }
 }

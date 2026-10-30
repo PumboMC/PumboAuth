@@ -236,7 +236,7 @@ impl Plugin for PumboAuth {
         api::info(&format!(
             "PumboAuth {} loaded for {} (commands /{})",
             env!("CARGO_PKG_VERSION"),
-            api::PLATFORM,
+            crate::platform(),
             admin_names.join(", /")
         ));
         Ok(())
