@@ -50,7 +50,13 @@ Accounts and login for Pumpkin servers in offline mode. New players register wit
 
 ## Installation
 
-Drop the file into `plugins/` and start the server. The config is created in `plugins/data/pumboauth/`. Works with Pumpkin 0.2.1 (Minecraft 26.3); for Pumpkin 0.2.0 take `PumboAuth-Pumpkin-0.2.0-<version>.wasm` from the [releases on GitHub](https://github.com/PumboMC/PumboAuth/releases).
+Drop the file into `plugins/` and start the server. The config is created in `plugins/data/pumboauth/`. Each Pumpkin release loads only its own file:
+
+- Pumpkin 0.2.1+26.3-26.51: the file here, or `PumboAuth-Pumpkin-26.3-<version>.wasm` from GitHub
+- Pumpkin 0.2.0+26.3-26.51: `PumboAuth-Pumpkin-0.2.0-<version>.wasm` from GitHub
+- Pumpkin 0.1.0-dev+26.2-26.45: `PumboAuth-Pumpkin-26.2-<version>.wasm` from GitHub
+
+The GitHub files are in the [latest release](https://github.com/PumboMC/PumboAuth/releases/latest).
 
 ## Premium players
 

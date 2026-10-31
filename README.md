@@ -101,7 +101,7 @@ The login rules live in one shared core. You pick the build that fits your setup
 | Build | File | Where it goes | What is different |
 | --- | --- | --- | --- |
 | 🌐 **PumboProx** (whole network) | `PumboAuth-Proxy-<version>.wasm` | `plugins/` of the proxy | One account database for every server. The player logs in in the proxy's virtual world, before any server sees them, so `/server` cannot skip the login. |
-| 🎃 **Pumpkin** (one server) | `PumboAuth-Pumpkin-26.3-<version>.wasm` (Pumpkin 0.2.1), `PumboAuth-Pumpkin-0.2.0-<version>.wasm` or `PumboAuth-Pumpkin-26.2-<version>.wasm` | `plugins/` of the server | The player waits at their own place: dark screen, hidden from others, cannot move or be hurt. Each server has its own accounts. |
+| 🎃 **Pumpkin** (one server) | The file for your Pumpkin release ([which one](#installation)) | `plugins/` of the server | The player waits at their own place: dark screen, hidden from others, cannot move or be hurt. Each server has its own accounts. |
 
 > [!IMPORTANT]
 > Premium auto-login needs PumboProx, or another proxy that checks Mojang accounts and forwards them with a shared secret (modern forwarding). On a plain Pumpkin server in offline mode the server cannot tell premium players apart, so every player registers and logs in with a password.
@@ -126,7 +126,15 @@ Whether a player is premium is decided by the proxy (`login.online-mode` in `pum
 
 **On Pumpkin**
 
-1. Put the file that matches your Pumpkin version into the server's `plugins/` folder.
+Each Pumpkin release loads only its own file:
+
+- Pumpkin 0.2.1+26.3-26.51: `PumboAuth-Pumpkin-26.3-<version>.wasm` from GitHub, or the file on the Pumpkin market
+- Pumpkin 0.2.0+26.3-26.51: `PumboAuth-Pumpkin-0.2.0-<version>.wasm` from GitHub
+- Pumpkin 0.1.0-dev+26.2-26.45: `PumboAuth-Pumpkin-26.2-<version>.wasm` from GitHub
+
+The GitHub files are in the [latest release](https://github.com/PumboMC/PumboAuth/releases/latest).
+
+1. Put that file into the server's `plugins/` folder.
 2. Start the server. The first start creates `plugins/data/pumboauth/config.yml` and the language files.
 
 The plugin only needs to read and write its own data folder. It has no network access.
