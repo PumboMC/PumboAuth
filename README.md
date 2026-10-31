@@ -10,7 +10,7 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-GPL--3.0-blue" alt="License: GPL-3.0"></a>
   <img src="https://img.shields.io/badge/built%20with-Rust-orange?logo=rust" alt="Built with Rust">
   <img src="https://img.shields.io/badge/plugin-WebAssembly-654FF0?logo=webassembly&logoColor=white" alt="WebAssembly plugin">
-  <a href="https://github.com/Pumpkin-MC/Pumpkin"><img src="https://img.shields.io/badge/Pumpkin-0.2.0%20%2826.3%29-F28C28" alt="Pumpkin 0.2.0 (26.3)"></a>
+  <a href="https://github.com/Pumpkin-MC/Pumpkin"><img src="https://img.shields.io/badge/Pumpkin-0.2.1%20%2826.3%29-F28C28" alt="Pumpkin 0.2.1 (26.3)"></a>
   <a href="https://github.com/Pumpkin-MC/Pumpkin"><img src="https://img.shields.io/badge/Pumpkin-0.1.0--dev%20%2826.2%29-F28C28" alt="Pumpkin 0.1.0-dev (26.2)"></a>
   <a href="https://github.com/PumboMC/PumboProx"><img src="https://img.shields.io/badge/PumboProx-supported-62B47A" alt="PumboProx: supported"></a>
   <img src="https://img.shields.io/badge/status-beta-yellow" alt="Status: beta">
@@ -101,7 +101,7 @@ The login rules live in one shared core. You pick the build that fits your setup
 | Build | File | Where it goes | What is different |
 | --- | --- | --- | --- |
 | 🌐 **PumboProx** (whole network) | `PumboAuth-Proxy-<version>.wasm` | `plugins/` of the proxy | One account database for every server. The player logs in in the proxy's virtual world, before any server sees them, so `/server` cannot skip the login. |
-| 🎃 **Pumpkin** (one server) | `PumboAuth-Pumpkin-26.3-<version>.wasm` or `PumboAuth-Pumpkin-26.2-<version>.wasm` | `plugins/` of the server | The player waits at their own place: dark screen, hidden from others, cannot move or be hurt. Each server has its own accounts. |
+| 🎃 **Pumpkin** (one server) | `PumboAuth-Pumpkin-26.3-<version>.wasm` (Pumpkin 0.2.1), `PumboAuth-Pumpkin-0.2.0-<version>.wasm` or `PumboAuth-Pumpkin-26.2-<version>.wasm` | `plugins/` of the server | The player waits at their own place: dark screen, hidden from others, cannot move or be hurt. Each server has its own accounts. |
 
 > [!IMPORTANT]
 > Premium auto-login needs PumboProx, or another proxy that checks Mojang accounts and forwards them (Velocity modern forwarding). On a plain Pumpkin server in offline mode the server cannot tell premium players apart, so every player registers and logs in with a password.
@@ -206,7 +206,7 @@ rustup target add wasm32-wasip2
 
 Cargo fetches the shared Pumbo libraries (`pumbo-common`, `pumbo-sdk`) from the [PumboProx](https://github.com/PumboMC/PumboProx) repository on the first build.
 
-Pumpkin build, both versions (`dist/PumboAuth-26.3.wasm` and `dist/PumboAuth-26.2.wasm`):
+Pumpkin build, every version (`dist/PumboAuth-26.3.wasm`, `dist/PumboAuth-0.2.0.wasm` and `dist/PumboAuth-26.2.wasm`):
 
 ```sh
 plugins/pumbo-auth-pumpkin/build.sh

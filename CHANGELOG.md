@@ -2,6 +2,12 @@
 
 All notable changes to PumboAuth, one section per release. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [Unreleased]
+
+### Changed
+
+- Builds for Pumpkin 0.2.1; Pumpkin 0.2.0 has its own file (`PumboAuth-Pumpkin-0.2.0-<version>.wasm`).
+
 ## [0.1.2-beta] - 2026-10-09
 
 No changes in PumboAuth; released with PumboPerms 0.1.2-beta.
