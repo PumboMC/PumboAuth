@@ -104,7 +104,7 @@ The login rules live in one shared core. You pick the build that fits your setup
 | 🎃 **Pumpkin** (one server) | `PumboAuth-Pumpkin-26.3-<version>.wasm` (Pumpkin 0.2.1), `PumboAuth-Pumpkin-0.2.0-<version>.wasm` or `PumboAuth-Pumpkin-26.2-<version>.wasm` | `plugins/` of the server | The player waits at their own place: dark screen, hidden from others, cannot move or be hurt. Each server has its own accounts. |
 
 > [!IMPORTANT]
-> Premium auto-login needs PumboProx, or another proxy that checks Mojang accounts and forwards them (Velocity modern forwarding). On a plain Pumpkin server in offline mode the server cannot tell premium players apart, so every player registers and logs in with a password.
+> Premium auto-login needs PumboProx, or another proxy that checks Mojang accounts and forwards them with a shared secret (modern forwarding). On a plain Pumpkin server in offline mode the server cannot tell premium players apart, so every player registers and logs in with a password.
 
 ## Installation
 
@@ -146,7 +146,7 @@ The config file is written on the first start, with a short comment on every opt
 | `auth.ip-registrations-max` | `3` | Accounts per address within `ip-registrations-hours` (6). |
 | `auth.ip-bruteforce-max` | `10` | Wrong passwords before an address is blocked. |
 | `sessions.ttl-minutes` | `60` | How long a session lasts. |
-| `premium.forwarded-profiles` | `true` | Premium players log in by themselves. Turn it off behind BungeeCord forwarding without BungeeGuard. |
+| `premium.forwarded-profiles` | `true` | Premium players log in by themselves. Turn it off behind legacy forwarding without a shared secret. |
 | `nickname.blocked` | none | Nicknames that are refused, `*` matches anything (`["admin*"]`). |
 | `nickname.premium-protection` | `true` | Offline players cannot join with a premium account's nickname. |
 | `two-factor.issuer` | `Minecraft` | The name shown in the authenticator app. |

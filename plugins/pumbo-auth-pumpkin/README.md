@@ -42,7 +42,7 @@ With PumboFilter, PumboAuth waits until PumboFilter's checks are done (it asks P
 
 - The player's real inventory stays visible until they log in (the hotbar and the inventory screen): released Pumpkin lets plugins send no inventory packets. Nothing in it can be used, moved or dropped.
 - On a standalone server in offline mode nobody is premium: without a proxy Pumpkin cannot check a single player with Mojang. Use online mode, or a proxy with authenticated forwarding.
-- `premium.forwarded-profiles` trusts the profile the server got. That is safe in online mode and behind Velocity modern forwarding, PumboProx, BungeeGuard or Vine; turn it off behind BungeeCord forwarding without BungeeGuard, where a client can send any profile.
+- `premium.forwarded-profiles` trusts the profile the server got. That is safe in online mode and behind PumboProx or any forwarding with a shared secret; turn it off behind legacy forwarding without a shared secret, where a client can send any profile.
 - Behind a proxy every server with PumboAuth has its own accounts. Install it on the server players join first, and do not let players switch servers through the proxy (`/server`) before they log in; the login on the proxy itself comes with PumboProx.
 - The two-factor setup shows the key and a link to copy in chat; there is no QR code on a map (released Pumpkin would send the map to every player).
 - If the plugin is unloaded (`plugin unload`), Pumpkin lets it disconnect nobody: players who have not logged in are released and asked to join again. While it is unloaded or after it crashed, nothing cancels the player commands: Pumpkin then writes `/login`, `/changepassword` and the others to its log with their arguments (also as unknown commands), and the players it held stay in the dark until they reconnect. Reload it right away (`plugin load`), and check the log for `Loaded pumboauth` after every update.
@@ -119,7 +119,7 @@ A player who has to log in is held at their own place: the screen is dark (on th
 | `auth.command-cooldown-ms` | `750` | least time between two commands that check a password |
 | `auth.confirm-keyword` | `confirm` | the word that confirms `/premium` |
 | `sessions.enabled` / `ttl-minutes` | `true` / `60` | a player who comes back from the same address with the same UUID within the time skips the password |
-| `premium.forwarded-profiles` | `true` | players authenticated by Mojang log in by themselves. They are recognised by a version 4 UUID with a signed skin, which only a server in online mode or authenticated proxy forwarding (Velocity modern, PumboProx, BungeeGuard, Vine) gives; an offline player always has a version 3 UUID. Turn this off behind BungeeCord forwarding without BungeeGuard, where a client can send any profile |
+| `premium.forwarded-profiles` | `true` | players authenticated by Mojang log in by themselves. They are recognised by a version 4 UUID with a signed skin, which only a server in online mode or authenticated proxy forwarding (PumboProx, or forwarding with a shared secret) gives; an offline player always has a version 3 UUID. Turn this off behind legacy forwarding without a shared secret, where a client can send any profile |
 | `premium.save-accounts` | `true` | store an account for a premium player at the first join (protects the nickname) |
 | `nickname.min-length` / `max-length` / `allowed-chars` | `3` / `16` / letters, digits, `_` | allowed nicknames |
 | `nickname.blocked` | none | nicknames that are refused; `*` matches anything (`["admin*"]`) |

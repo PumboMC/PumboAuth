@@ -54,7 +54,7 @@ Drop the file into `plugins/` and start the server. The config is created in `pl
 
 ## Premium players
 
-On a plain offline-mode server everyone logs in with a password, because the server can't tell premium players apart. Premium players skip the password behind PumboProx, or behind another proxy that checks Mojang accounts (Velocity modern forwarding).
+On a plain offline-mode server everyone logs in with a password, because the server can't tell premium players apart. Premium players skip the password behind PumboProx, or behind another proxy that checks Mojang accounts and forwards them with a shared secret.
 
 ## Running a network?
 

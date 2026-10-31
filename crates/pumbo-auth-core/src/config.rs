@@ -56,8 +56,8 @@ pub struct NicknameCfg {
 pub struct PremiumCfg {
     pub enabled: bool,
     /// Trust a version 4 UUID with a signed skin (a server in online mode,
-    /// authenticated proxy forwarding). Off behind BungeeCord forwarding without
-    /// BungeeGuard, where a client can send any profile.
+    /// authenticated proxy forwarding). Off behind legacy forwarding without a
+    /// shared secret, where a client can send any profile.
     pub forwarded_profiles: bool,
     /// Store an account for a premium player at their first join.
     pub save_accounts: bool,
