@@ -60,7 +60,7 @@ With PumboFilter, PumboAuth waits until PumboFilter's checks are done (it asks P
    Without this, Pumpkin asks in the console on the first start. On a hosting panel there is no terminal to answer, so Pumpkin refuses the permissions and keeps the refusal in `plugins/permission_cache.json`: the plugin does not load, even after a restart. The override also wins over that cached refusal. Write the names with dots: the colon form from Pumpkin's examples never matches.
 3. Start the server. PumboAuth writes `plugins/data/pumboauth/config.yml`, `lang/en.yml` and `lang/pl.yml`, and keeps its data in `plugins/data/pumboauth/auth.redb`.
 
-On Pumpkin 0.2.1 typing a plugin command in the server console can crash the server; this is a bug in Pumpkin. Until it is fixed, set `use_tty = false` in `[commands]` of `pumpkin.toml`. The console still takes commands, without Tab completion.
+On Pumpkin 0.2.1 and 0.2.2 typing a plugin command in the server console can crash the server; this is a bug in Pumpkin. Until it is fixed, set `use_tty = false` in `[commands]` of `pumpkin.toml`. The console still takes commands, without Tab completion.
 
 Note: with the console input on a pipe that stays open, Pumpkin 0.2.1, 0.2.0 and 0.1.0-dev hang on "Starting save." after SIGINT (also without plugins); stop them with the `stop` command.
 
