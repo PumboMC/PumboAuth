@@ -145,9 +145,6 @@ The GitHub files are in the [latest release](https://github.com/PumboMC/PumboAut
    This also overrides a refusal in the cache. Write the names with dots: the colon form from Pumpkin's examples never matches.
 3. Start the server. The first start creates `plugins/data/pumboauth/config.yml` and the language files.
 
-> [!WARNING]
-> On Pumpkin 0.2.1 and 0.2.2 typing a plugin command in the server console can crash the server. This is a bug in Pumpkin. Until it is fixed, set `use_tty = false` in `[commands]` of `pumpkin.toml`. The console still takes commands, without Tab completion.
-
 ## Configuration
 
 The config file is written on the first start, with a short comment on every option. Reload it with `/pumboauth reload`. A wrong value is reported in the log with the option name and replaced by the default. The most used options:
