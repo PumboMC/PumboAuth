@@ -35,7 +35,7 @@ sha1 = "0.10"
 sha2 = "0.10"
 pumbo-common = { git = "https://github.com/PumboMC/PumboProx", rev = "aebc9a76f30422fdd85ce2a545c8019ee4aea919" }
 pumbo-auth-core = { path = "crates/pumbo-auth-core" }
-pumbo-sdk = { git = "https://github.com/PumboMC/PumboProx", rev = "aebc9a76f30422fdd85ce2a545c8019ee4aea919" }
+pumbo-sdk = { git = "https://github.com/PumboMC/PumboProx", rev = "8cefc1ace5a7a84a6ee9806fb8029532ad8a343b" }
 
 [profile.release]
 opt-level = "s"
