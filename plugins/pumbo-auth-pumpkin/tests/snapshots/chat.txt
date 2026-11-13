@@ -1,0 +1,161 @@
+PumboAuth on Pumpkin: chat screens. Written by tests/chat.rs (PUMBO_SNAPSHOT_WRITE=1).
+
+== A1 admin: /pumboauth help
+{"extra":[{"bold":true,"color":"#f28c28","text":"Pumbo"},{"bold":true,"color":"#f28c28","text":"Auth"},{"color":"dark_gray","text":" 0.1.3-beta"},{"color":"dark_gray","text":" · "},{"color":"white","text":"Admin"},{"text":"   "},{"click_event":{"action":"suggest_command","command":"/pumboauth "},"color":"#ffc27a","hover_event":{"action":"show_text","value":{"extra":[{"color":"gray","text":"Click to type it in chat"}],"text":""}},"text":"/pumboauth"},{"text":" "},{"click_event":{"action":"suggest_command","command":"/pa "},"color":"gray","text":"/pa"},{"text":"\n"},{"click_event":{"action":"suggest_command","command":"/pumboauth reload"},"extra":[{"color":"#ffc27a","text":"reload"},{"text":"                "},{"bold":true,"text":"   "},{"color":"gray","text":"Reload the config and messages"}],"hover_event":{"action":"show_text","value":{"extra":[{"color":"#ffc27a","text":"/pumboauth reload"},{"text":"\n"},{"color":"white","text":"Reload the config and messages"},{"text":"\n"},{"text":"\n"},{"color":"dark_gray","text":"Permission: pumbo.auth.reload"},{"text":"\n"},{"color":"dark_gray","italic":true,"text":"Click to type it in chat"}],"text":""}},"text":""},{"text":"\n"},{"click_event":{"action":"suggest_command","command":"/pumboauth stats"},"extra":[{"color":"#ffc27a","text":"stats"},{"text":"                   "},{"bold":true,"text":"  "},{"color":"gray","text":"Logins, accounts and players"}],"hover_event":{"action":"show_text","value":{"extra":[{"color":"#ffc27a","text":"/pumboauth stats"},{"text":"\n"},{"color":"white","text":"Logins, accounts and players"},{"text":"\n"},{"text":"\n"},{"color":"dark_gray","text":"Permission: pumbo.auth.stats"},{"text":"\n"},{"color":"dark_gray","italic":true,"text":"Click to type it in chat"}],"text":""}},"text":""},{"text":"\n"},{"click_event":{"action":"suggest_command","command":"/pumboauth forceregister "},"extra":[{"color":"#ffc27a","text":"forceregister "},{"color":"white","text":"<nick> <password>"},{"text":"   "},{"color":"gray","text":"Create an account"}],"hover_event":{"action":"show_text","value":{"extra":[{"color":"#ffc27a","text":"/pumboauth forceregister "},{"color":"white","text":"<nick> <password>"},{"text":"\n"},{"color":"white","text":"Create an account"},{"text":"\n"},{"color":"gray","text":"The player then logs in with this password."},{"text":"\n"},{"color":"gray","text":"Example: /pumboauth forceregister Steve secret123"},{"text":"\n"},{"text":"\n"},{"color":"dark_gray","text":"Permission: pumbo.auth.forceregister"},{"text":"\n"},{"color":"dark_gray","italic":true,"text":"Click to type it in chat"}],"text":""}},"text":""},{"text":"\n"},{"click_event":{"action":"suggest_command","command":"/pumboauth forcechangepassword "},"extra":[{"color":"#ffc27a","text":"forcechangepassword "},{"color":"white","text":"<nick> <password>"},{"text":"   "},{"color":"gray","text":"Set a password"}],"hover_event":{"action":"show_text","value":{"extra":[{"color":"#ffc27a","text":"/pumboauth forcechangepassword "},{"color":"white","text":"<nick> <password>"},{"text":"\n"},{"color":"white","text":"Set a password"},{"text":"\n"},{"color":"gray","text":"Also turns a premium account back into a normal one."},{"text":"\n"},{"text":"\n"},{"color":"dark_gray","text":"Permission: pumbo.auth.forcechangepassword"},{"text":"\n"},{"color":"dark_gray","italic":true,"text":"Click to type it in chat"}],"text":""}},"text":""},{"text":"\n"},{"click_event":{"action":"suggest_command","command":"/pumboauth unregister "},"extra":[{"color":"#ffc27a","text":"unregister "},{"color":"white","text":"<nick>"},{"text":"     "},{"bold":true,"text":" "},{"color":"gray","text":"Remove an account"}],"hover_event":{"action":"show_text","value":{"extra":[{"color":"#ffc27a","text":"/pumboauth unregister "},{"color":"white","text":"<nick>"},{"text":"\n"},{"color":"white","text":"Remove an account"},{"text":"\n"},{"color":"gray","text":"A player who is online is disconnected."},{"text":"\n"},{"text":"\n"},{"color":"dark_gray","text":"Permission: pumbo.auth.unregister"},{"text":"\n"},{"color":"dark_gray","italic":true,"text":"Click to type it in chat"}],"text":""}},"text":""},{"text":"\n"},{"click_event":{"action":"suggest_command","command":"/pumboauth forcelogin "},"extra":[{"color":"#ffc27a","text":"forcelogin "},{"color":"white","text":"<nick>"},{"text":"   "},{"bold":true,"text":"   "},{"color":"gray","text":"Log in a waiting player"}],"hover_event":{"action":"show_text","value":{"extra":[{"color":"#ffc27a","text":"/pumboauth forcelogin "},{"color":"white","text":"<nick>"},{"text":"\n"},{"color":"white","text":"Log in a waiting player"},{"text":"\n"},{"color":"gray","text":"For a player who is at the login prompt right now."},{"text":"\n"},{"text":"\n"},{"color":"dark_gray","text":"Permission: pumbo.auth.forcelogin"},{"text":"\n"},{"color":"dark_gray","italic":true,"text":"Click to type it in chat"}],"text":""}},"text":""},{"text":"\n"},{"click_event":{"action":"suggest_command","command":"/pumboauth forcepremium "},"extra":[{"color":"#ffc27a","text":"forcepremium "},{"color":"white","text":"<nick>"},{"text":"   "},{"color":"gray","text":"Make an account premium"}],"hover_event":{"action":"show_text","value":{"extra":[{"color":"#ffc27a","text":"/pumboauth forcepremium "},{"color":"white","text":"<nick>"},{"text":"\n"},{"color":"white","text":"Make an account premium"},{"text":"\n"},{"color":"gray","text":"The next premium join with this nickname claims the account; the password is removed."},{"text":"\n"},{"text":"\n"},{"color":"dark_gray","text":"Permission: pumbo.auth.forcepremium"},{"text":"\n"},{"color":"dark_gray","italic":true,"text":"Click to type it in chat"}],"text":""}},"text":""},{"text":"\n"},{"click_event":{"action":"suggest_command","command":"/pumboauth forceoffline "},"extra":[{"color":"#ffc27a","text":"forceoffline "},{"color":"white","text":"<nick>"},{"text":"   "},{"bold":true,"text":" "},{"color":"gray","text":"Make an account normal"}],"hover_event":{"action":"show_text","value":{"extra":[{"color":"#ffc27a","text":"/pumboauth forceoffline "},{"color":"white","text":"<nick>"},{"text":"\n"},{"color":"white","text":"Make an account normal"},{"text":"\n"},{"color":"gray","text":"The account logs in with a password again; set one with forcechangepassword."},{"text":"\n"},{"text":"\n"},{"color":"dark_gray","text":"Permission: pumbo.auth.forceoffline"},{"text":"\n"},{"color":"dark_gray","italic":true,"text":"Click to type it in chat"}],"text":""}},"text":""},{"text":"\n"},{"color":"dark_gray","text":"◀"},{"color":"gray","text":" 1/2 "},{"bold":true,"click_event":{"action":"run_command","command":"/pumboauth help 2"},"color":"#f28c28","hover_event":{"action":"show_text","value":{"extra":[{"color":"gray","text":"Next page"}],"text":""}},"text":"▶"},{"text":"   "},{"color":"dark_gray","text":"Hover a command for details, click to type it."}],"text":""}
+
+== A1 console: pumboauth help
+  PumboAuth 0.1.3-beta · Admin   /pumboauth /pa
+    /pumboauth reload                                  Reload the config and messages
+    /pumboauth stats                                   Logins, accounts and players
+    /pumboauth forceregister <nick> <password>         Create an account
+    /pumboauth forcechangepassword <nick> <password>   Set a password
+    /pumboauth unregister <nick>                       Remove an account
+    /pumboauth forcelogin <nick>                       Log in a waiting player
+    /pumboauth forcepremium <nick>                     Make an account premium
+    /pumboauth forceoffline <nick>                     Make an account normal
+    /pumboauth reset2fa <nick>                         Turn off two-factor login
+    /pumboauth unblock <ip|nick>                       Clear failed logins
+    /pumboauth logout <nick>                           Remove the sessions of an account
+    /pumboauth import authme <file>                    Import accounts from AuthMe
+    /pumboauth version                                 Version and platform
+
+== S2 admin: /pumboauth forceregister Steve hunter22
+{"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"white","text":"Steve"},{"color":"green","text":" has an account now."}],"text":""}
+
+== S2 admin: /pumboauth forceregister Steve hunter22
+{"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"white","text":"Steve"},{"color":"red","text":" already has an account."}],"text":""}
+
+== S2 admin: /pumboauth forcechangepassword Steve hunter23
+{"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"white","text":"Steve"},{"color":"green","text":" has a new password."}],"text":""}
+
+== S2 admin: /pumboauth forcelogin Alex
+{"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"white","text":"Alex"},{"color":"red","text":" is not at the login prompt."}],"text":""}
+
+== S2 admin: /pumboauth forcepremium Steve
+{"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"white","text":"Steve"},{"color":"green","text":" logs in with premium from now on."}],"text":""}
+
+== S2 admin: /pumboauth forceoffline Steve
+{"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"white","text":"Steve"},{"color":"green","text":" logs in with a password from now on. Set one: "},{"color":"#ffc27a","text":"/pumboauth forcechangepassword Steve <password>"}],"text":""}
+
+== S2 admin: /pumboauth reset2fa Steve
+{"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"green","text":"Two-factor login of "},{"color":"white","text":"Steve"},{"color":"green","text":" is off."}],"text":""}
+
+== S2 admin: /pumboauth unblock 203.0.113.7
+{"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"green","text":"Failed logins of "},{"color":"white","text":"203.0.113.7"},{"color":"green","text":" are cleared."}],"text":""}
+
+== S2 admin: /pumboauth logout Steve
+{"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"green","text":"The sessions of "},{"color":"white","text":"Steve"},{"color":"green","text":" are removed."}],"text":""}
+
+== S2 admin: /pumboauth unregister Steve
+{"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"green","text":"The account of "},{"color":"white","text":"Steve"},{"color":"green","text":" is removed."}],"text":""}
+
+== S2 admin: /pumboauth unregister Steve
+{"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"white","text":"Steve"},{"color":"red","text":" has no account."}],"text":""}
+
+== S2 admin: /pumboauth forceregister
+{"extra":[{"click_event":{"action":"suggest_command","command":"/pumboauth forceregister "},"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"red","text":"Usage: "},{"color":"#ffc27a","text":"/pumboauth forceregister "},{"color":"white","text":"<nick> <password>"}],"hover_event":{"action":"show_text","value":{"extra":[{"color":"gray","text":"Click to type the command"}],"text":""}},"text":""}],"text":""}
+
+== S2 admin: /pumboauth import nothing x
+{"extra":[{"click_event":{"action":"suggest_command","command":"/pumboauth import authme "},"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"red","text":"Usage: "},{"color":"#ffc27a","text":"/pumboauth import authme "},{"color":"white","text":"<file>"}],"hover_event":{"action":"show_text","value":{"extra":[{"color":"gray","text":"Click to type the command"}],"text":""}},"text":""}],"text":""}
+
+== S2 admin: /pumboauth unregisterr
+{"extra":[{"click_event":{"action":"run_command","command":"/pumboauth help"},"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"red","text":"Unknown subcommand "},{"color":"white","text":"unregisterr"},{"color":"red","text":". Use "},{"color":"#ffc27a","text":"/pumboauth help"},{"color":"red","text":"."}],"hover_event":{"action":"show_text","value":{"extra":[{"color":"gray","text":"Click to see the commands"}],"text":""}},"text":""}],"text":""}
+
+== S2 admin: /pumboauth version
+{"extra":[{"bold":true,"color":"#f28c28","text":"Pumbo"},{"bold":true,"color":"#f28c28","text":"Auth"},{"color":"white","text":" 0.1.3-beta"},{"text":"\n"},{"color":"gray","text":"Platform: "},{"color":"white","text":"Pumpkin 0.2.2 (MC 26.3)"}],"text":""}
+
+== S2 admin: reload with 2 warnings
+{"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"yellow","text":"Reloaded with "},{"color":"white","text":"2"},{"color":"yellow","text":" warnings, see the server log."}],"text":""}
+
+== S2 player: /pumboauth stats
+{"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"red","text":"You don't have permission to do that."}],"text":""}
+
+== A7 admin: /pumboauth stats
+{"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"gray","text":"Logging in now: "},{"color":"white","text":"0"},{"color":"gray","text":" of "},{"color":"white","text":"0"},{"color":"gray","text":" players. Accounts: "},{"color":"white","text":"0"},{"text":"\n"},{"color":"gray","text":"Logins: "},{"color":"white","text":"5,310"},{"text":", new accounts: "},{"color":"white","text":"48"},{"text":", by session: "},{"color":"white","text":"2,100"},{"text":", premium: "},{"color":"white","text":"911"},{"text":", wrong passwords: "},{"color":"white","text":"37"},{"text":"\n"},{"color":"gray","text":"Database: "},{"color":"white","text":"ok"}],"text":""}
+
+== A7 console: pumboauth stats
+  PumboAuth » Logging in now: 0 of 0 players. Accounts: 0
+  Logins: 5,310, new accounts: 48, by session: 2,100, premium: 911, wrong passwords: 37
+  Database: ok
+
+== A2 player (en): join without an account
+{"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"gray","text":"Create an account: "},{"color":"#ffc27a","text":"/register <password> <password>"}],"text":""}
+title: {"extra":[{"color":"gold","text":"Welcome"}],"text":""}
+subtitle: {"extra":[{"color":"gray","text":"/register <password> <password>"}],"text":""}
+bossbar: {"extra":[{"color":"yellow","text":"Time left to log in: "},{"color":"white","text":"1 minute"}],"text":""}
+
+== A2 player (en): /register hunter22 hunter22
+{"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"green","text":"Account created. You are logged in."}],"text":""}
+title: {"text":""}
+subtitle: {"text":""}
+
+== A3 player (en): join with an account
+{"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"gray","text":"Log in: "},{"color":"#ffc27a","text":"/login <password>"}],"text":""}
+title: {"extra":[{"color":"gold","text":"Welcome back"}],"text":""}
+subtitle: {"extra":[{"color":"gray","text":"/login <password>"}],"text":""}
+bossbar: {"extra":[{"color":"yellow","text":"Time left to log in: "},{"color":"white","text":"1 minute"}],"text":""}
+
+== A2 player (en): /login wrong
+{"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"red","text":"Wrong password. Attempts left: "},{"color":"white","text":"2"},{"color":"red","text":"."}],"text":""}
+
+== A2 player (en): /login hunter22
+{"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"green","text":"Logged in."}],"text":""}
+title: {"text":""}
+subtitle: {"text":""}
+
+== A2 player (pl): join without an account
+{"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"gray","text":"Załóż konto: "},{"color":"#ffc27a","text":"/register <password> <password>"}],"text":""}
+title: {"extra":[{"color":"gold","text":"Witaj"}],"text":""}
+subtitle: {"extra":[{"color":"gray","text":"/register <hasło> <hasło>"}],"text":""}
+bossbar: {"extra":[{"color":"yellow","text":"Czas na zalogowanie: "},{"color":"white","text":"1 minuta"}],"text":""}
+
+== A2 player (pl): /register hunter22 hunter22
+{"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"green","text":"Konto założone. Jesteś zalogowany."}],"text":""}
+title: {"text":""}
+subtitle: {"text":""}
+
+== A3 player (pl): join with an account
+{"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"gray","text":"Zaloguj się: "},{"color":"#ffc27a","text":"/login <password>"}],"text":""}
+title: {"extra":[{"color":"gold","text":"Witaj ponownie"}],"text":""}
+subtitle: {"extra":[{"color":"gray","text":"/login <hasło>"}],"text":""}
+bossbar: {"extra":[{"color":"yellow","text":"Czas na zalogowanie: "},{"color":"white","text":"1 minuta"}],"text":""}
+
+== A2 player (pl): /login wrong
+{"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"red","text":"Złe hasło. Zostało prób: "},{"color":"white","text":"2"},{"color":"red","text":"."}],"text":""}
+
+== A2 player (pl): /login hunter22
+{"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"green","text":"Zalogowano."}],"text":""}
+title: {"text":""}
+subtitle: {"text":""}
+
+== A4 player: /2fa enable hunter22
+{"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"gray","text":"Add this key to your authenticator app: "},{"color":"white","text":"JBSWY3DPEHPK3PXPJBSWY3DPEHPK3PXP"}],"text":""}
+{"extra":[{"click_event":{"action":"copy_to_clipboard","value":"otpauth://totp/Minecraft:Steve?secret=JBSWY3DPEHPK3PXPJBSWY3DPEHPK3PXP&issuer=Minecraft&digits=6&period=30"},"color":"yellow","text":"[click to copy the setup link]"}],"text":""}
+{"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"gray","text":"Then confirm with "},{"color":"#ffc27a","text":"/2fa confirm <code>"}],"text":""}
+
+== A5 player: /2fa confirm <code>
+{"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"green","text":"Two-factor login is on. Recovery codes, each works once:"}],"text":""}
+{"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"white","text":"4k7q-m2xd  9tbn-h3lp  w6rc-8yfa  a2b3-c4d5  e6f7-g8h9  j2k3-m4n5  p6q7-r8s9  t2u3-v4w5"}],"text":""}
+
+== A6 player: premium join with a password account
+{"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"gray","text":"This nickname has an account with a password. After you log in, "},{"color":"#ffc27a","text":"/premium <password>"},{"color":"gray","text":" switches it to premium login."}],"text":""}
+{"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"gray","text":"Log in: "},{"color":"#ffc27a","text":"/login <password>"}],"text":""}
+title: {"extra":[{"color":"gold","text":"Welcome back"}],"text":""}
+subtitle: {"extra":[{"color":"gray","text":"/login <password>"}],"text":""}
+bossbar: {"extra":[{"color":"yellow","text":"Time left to log in: "},{"color":"white","text":"1 minute"}],"text":""}
+
+== A6 player: /premium hunter22
+{"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"yellow","text":"After this you can only join with this premium account, and the password is removed. Type "},{"color":"#ffc27a","text":"/premium confirm"},{"color":"yellow","text":" within 30 seconds."}],"text":""}
+
+== A6 player: /premium confirm
+{"extra":[{"color":"#f28c28","text":"PumboAuth "},{"color":"dark_gray","text":"» "},{"color":"green","text":"Premium login is on. Next time you are logged in automatically."}],"text":""}
+
+== S4 player: join, wrong password, login with prefix: SkyBlock
+{"extra":[{"color":"#7cc0ff","text":"SkyBlock "},{"color":"dark_gray","text":"» "},{"color":"gray","text":"Log in: "},{"color":"#ffc27a","text":"/login <password>"}],"text":""}
+title: {"extra":[{"color":"gold","text":"Welcome back"}],"text":""}
+subtitle: {"extra":[{"color":"gray","text":"/login <password>"}],"text":""}
+bossbar: {"extra":[{"color":"yellow","text":"Time left to log in: "},{"color":"white","text":"1 minute"}],"text":""}
+{"extra":[{"color":"#7cc0ff","text":"SkyBlock "},{"color":"dark_gray","text":"» "},{"color":"red","text":"Wrong password. Attempts left: "},{"color":"white","text":"2"},{"color":"red","text":"."}],"text":""}
+{"extra":[{"color":"#7cc0ff","text":"SkyBlock "},{"color":"dark_gray","text":"» "},{"color":"green","text":"Logged in."}],"text":""}
+title: {"text":""}
+subtitle: {"text":""}
