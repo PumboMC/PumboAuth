@@ -26,7 +26,7 @@ dbg_macro = "deny"
 
 [workspace.dependencies]
 argon2 = "0.5"
-bcrypt = "0.17"
+bcrypt = "0.19"
 hmac = "0.12"
 qrcodegen = "1.8"
 serde = { version = "1", features = ["derive"] }
