@@ -1,7 +1,7 @@
 //! Time-based one-time passwords (RFC 6238 / RFC 4226) with HMAC-SHA1, recovery
 //! codes, and the setup QR code drawn on a map.
 
-use hmac::{Hmac, Mac};
+use hmac::{Hmac, KeyInit, Mac};
 use pumbo_common::map::{BLACK, Canvas, SIZE, SNOW, color};
 use sha1::Sha1;
 use sha2::{Digest, Sha256};

@@ -1,7 +1,8 @@
 //! Password hashing. New passwords use argon2id (PHC string); imported hashes
 //! from AuthMe-style plugins are verified and can be upgraded on login.
 
-use argon2::password_hash::{PasswordHash, PasswordHasher, PasswordVerifier, SaltString};
+use argon2::password_hash::phc::PasswordHash;
+use argon2::password_hash::{PasswordHasher, PasswordVerifier};
 use argon2::{Algorithm, Argon2, Params, Version};
 use sha2::{Digest, Sha256, Sha512};
 
@@ -71,8 +72,10 @@ pub fn hash(password: &str, settings: Argon2Settings) -> Result<String, String> 
     }
     let mut salt_bytes = [0u8; 16];
     random_bytes(&mut salt_bytes);
-    let salt = SaltString::encode_b64(&salt_bytes).map_err(|e| e.to_string())?;
-    argon2(settings)?.hash_password(password.as_bytes(), &salt).map(|h| h.to_string()).map_err(|e| e.to_string())
+    argon2(settings)?
+        .hash_password_with_salt(password.as_bytes(), &salt_bytes)
+        .map(|h| h.to_string())
+        .map_err(|e| e.to_string())
 }
 
 pub fn verify(password: &str, stored: &str, settings: Argon2Settings) -> Verify {
@@ -144,6 +147,17 @@ mod tests {
         assert_eq!(verify("hunter23", &h, FAST), Verify::Wrong);
         // other configured parameters ask for a rehash
         assert_eq!(verify("hunter22", &h, Argon2Settings::default()), Verify::Ok { needs_rehash: true });
+    }
+
+    #[test]
+    fn argon2_hash_from_old_version_still_verifies() {
+        // PHC string produced by argon2 0.5.x (the release line before this crate
+        // moved to 0.6), for the password "hunter22". Existing users' stored hashes
+        // look like this, so the new verifier must still accept them.
+        let old = "$argon2id$v=19$m=19456,t=2,p=1$AQIDBAUGBwgJCgsMDQ4PEA$B+fhRLf+/pgEIF4pYfxUbTWe0UEkCxvetxUL2vm3E30";
+        assert_eq!(detect(old), HashFormat::Argon2);
+        assert!(matches!(verify("hunter22", old, FAST), Verify::Ok { .. }));
+        assert_eq!(verify("hunter23", old, FAST), Verify::Wrong);
     }
 
     #[test]
