@@ -33,9 +33,6 @@
 
 <p align="center"><b>Running more than one server?</b> <a href="https://github.com/PumboMC/PumboProx">PumboProx</a> is the proxy for Pumpkin networks, with plugins in WebAssembly.<br>PumboAuth runs on it too: players log in once for the whole network, and premium players join without a password.</p>
 
-> [!NOTE]
-> PumboAuth is in **beta** (0.1.3-beta). Try it on a test server before you put players on it.
-
 ## What it does
 
 PumboAuth asks players without a Mojang account to register and log in with a password. Premium players, and players who come back within their session, log in by themselves. On PumboProx one account works on every server of the network, and the login happens before any server sees the player.
