@@ -33,7 +33,7 @@ serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 sha1 = "0.11"
 sha2 = "0.11"
-pumbo-common = { git = "https://github.com/PumboMC/PumboProx", rev = "aebc9a76f30422fdd85ce2a545c8019ee4aea919" }
+pumbo-common = { git = "https://github.com/PumboMC/PumboProx", rev = "2c12a246b5b22156d6565d531b92ea3bbe691169" }
 pumbo-auth-core = { path = "crates/pumbo-auth-core" }
 pumbo-sdk = { git = "https://github.com/PumboMC/PumboProx", rev = "aebc9a76f30422fdd85ce2a545c8019ee4aea919" }
 
